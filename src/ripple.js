@@ -32,7 +32,7 @@ var Ripple = {
                 maxX        = Math.max(dx, width - dx),
                 maxY        = Math.max(dy, height - dy),
                 style       = window.getComputedStyle(target),
-                radius      = Math.sqrt((maxX * maxX) + (maxY * maxY)),
+                radius      = Math.sqrt((maxX * maxX) + (maxY * maxY))*1.6,
                 border      = (targetBorder > 0 ) ? targetBorder : 0;
 
             // Create the ripple and its container
@@ -78,8 +78,8 @@ var Ripple = {
             // No need to set positioning because ripple should be child of target and to it's relative position.
             // rippleContainer.style.left    = left + (((window.pageXOffset || document.scrollLeft) - (document.clientLeft || 0)) || 0) + "px";
             // rippleContainer.style.top     = top + (((window.pageYOffset || document.scrollTop) - (document.clientTop || 0)) || 0) + "px";
-            rippleContainer.style.width   = width + "px";
-            rippleContainer.style.height  = height + "px";
+            rippleContainer.style.width   = "100%";
+            rippleContainer.style.height  = height*1.2 + "px";
             rippleContainer.style.borderTopLeftRadius  = style.borderTopLeftRadius;
             rippleContainer.style.borderTopRightRadius  = style.borderTopRightRadius;
             rippleContainer.style.borderBottomLeftRadius  = style.borderBottomLeftRadius;
